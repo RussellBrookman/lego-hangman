@@ -1,186 +1,45 @@
 <!DOCTYPE>
 <html>
-<head>
-<link rel="stylesheet" href="hangman.css">
-<title>Hangman</title>
-<header>
-	<div class="topBorder">
-		<h1>Lego Hangman!</h1>
-	</div>
-</header>
-</head>
+  <head>
+    <link rel="stylesheet" href="hangman.css">
+    <title>Hangman</title>
+    <header>
+      <div class="topBorder">
+        <h1>Lego Hangman!</h1>
+      </div>
+    </header>
+  </head>
 <body>
-
-		<div class="gameArea">		
-		<div id="letterSpot"></div>
-		<div id="aLetter"></div>
-		<div id="repeatLetter"></div>
-
-		<!-- <button onclick="pressStart()">Start</button>	 -->
-			
-		<div class="imageContainer">
-		<img src="images\lego-superman-legs.jpg" id="legs">
-		<img src="images\lego-superman-body.jpg" id="body">
-		<img src="images\lego-superman-no-hands.jpg" id="arms">
-		<img src="images\lego-superman-right-hand-missing.jpg" id="oneHand">
-		<img src="images\lego-superman-no-head.jpg" id="bothHands">
-		<img src="images\lego-superman-no-cape.jpg" id="withHead">
-		<img src="images\lego-superman.jpg" id="withCape">
-		<img src="images\lego-superman-kryptonite.jpg" id="lostKry">
-		<img src="images\lego-superman-flying.jpg" id="wonEar">
-
-		</div>
-
-		<footer>
-			<div id='usedLetters'>Used Letters</div>
-			<div>
-	     <!--   <div type="submit" class="letterEntry" onkeyup="aLetter()"> -->
-	        <button onclick= "wGame()" type= "submit" id= "letterEntry">enter</button>
-			<div class="answerArea">
-				<input id='typedLetters' type='text' maxlength='1'/>
-			</div>
-			</div>
-			</div>
-	</div>
-		</footer>
-<script type="text/javascript">
- //		Word choices
-	var words = ['superman', 'batman', 'green lantern', 'wonder woman', 'the flash', 'robin', 'zatana', 'hawkgirl', 'hawkman', 'cyborg', 'aqua man', 'lex luthor', 'brainiac', 'darkseid', 'general zod', 'krypton', 'lois lane', 'lana lang', 'the joker', 'ares', 'sinestro', 'captain cold', 'gorilla grodd', 'cat woman', 'cheetah', 'chloe sullivan', 'captain marvel', 'black adam', 'the penguin', 'the riddler', 'non', 'supergirl', 'gotham city', 'bane', 'oa', 'themyscira', 'green arrow', 'central city', 'star labs', 'fortress of solitude', 'doomsday', 'solomon grundy'];
-	//	test
-	var randomWord = words[Math.floor(Math.random() * words.length)];
-	var typedLetters = "";
-
-	var wrongL = [];
-	var rightL = [];
-		for (var i = 0; i < randomWord.length; i++) {
-			wrongL.push(" ");
-		}
-	var guessRight = 0;
-	var guessWrong = 0;
-
-	var trys = Math.round((randomWord.length) + (.5 * randomWord.length));
-	var dashes = [];
-  		for (var i = 0; i < randomWord.length; i++) {
-            dashes.push("_");
-        }
-	document.getElementById("aLetter").innerHTML = dashes.join(" ");
-
-	function pressStart() {
-    
-    	document.getElementById("aLetter").innerHTML = (randomWord)
-	}
-
-	function wGame() {
-  typedLetters = document.getElementById("typedLetters").value;
   
-   for (i = 0; i < dashes.length; i++) {
-      if (randomWord[i] == typedLetters){
-        dashes[i] = typedLetters;
-      } else {
-      	document.getElementById("legs").style.display= "inline";
-      } 
-  document.getElementById("aLetter").innerHTML = dashes.join(" ");
-     	}
-  document.getElementById("typedLetters").value = "";
-	}
-
-	  
-	  /*   function roundTwo(wGame) {
-     	if (document.getElementById("legs").style.display="inline"  ==  true) {
-     		document.getElementById("legs").style.display= "none";	&&	document.getElementById("body").style.display= "inline";	*/
-
-/*	function isLetterInWord(typedLetters) {
-    	for(i = 0; i< dashes.length; i++) {
-        	if(typedLetters != randomWord[i]) {
-            dashes[i] != typedLetter;
-            guessWrong ++;
-        }	
-		    }
-	}				*/
-
-
-
-   /*   	if (document.getElementById("legs").style.display="inline" && randomWord[i] != typedLetters || dashes[i]) {
-      	document.getElementById("legs").style.display= "none" && document.getElementById("body").style.display="inline";
-      }				*/
-
-
-
-	/* function pictureRotation(guessWrong) {
-		if (guessWrong = 1) {
-			document.getElementById("legs").style.display = "inline";
-		}
-	}		*/
-
-
-	/* for (i = 0; i < dashes.length; i++) {
-		if (dashes.indexOf("_") == 0) {
-			alert("Well done! You're a supper guy!");
-		}	*/
-
-
-/*
-
-	function pressStart() {
-    document.getElementById("letterSpot").innerHTML = dashes;
-}			// 
-//		The answer so the player can see what he's doing		
-
-//		Random word selector
-	function randomWord () {
-    	return words[Math.floor(Math.random() * words.length)];
-}
-
-	var dashes = "";
-
-		for (i = 0; i < randomWord().length; i++) {
-  			if (randomWord().charAt(i) == " ") {
-    			dashes += " ";
-  			} else {
-    			dashes += "-";
-  			}
-		}
-
-//		document.getElementById("aLetter").innerHTML = placeHolder.join(" ");
-//    var remainingLetters = randomWord.length;
-//		the actual game
- //	    while (remainingLetters > 0) {
-//		player progress
-		
-//		storing what letters the player types
-/*		function aLetter() {
-    		var x = document.getElementById("fname");
-    		x.value = x.value.toLowerCase();
-    	aLetter();
-		}  			*/
+	<div class="gameArea">	
+    <div>
+      <span id="wC">Wins: </span>
+      <span id="lC">Looses: </span>
+    </div>
+    <div>
+      <span id="winCount">0</span>
+      <span id="looseCounter">0</span>	
+    </div>
 			
-// Update aa and remainingLetters for aLetter
-	/*	if (aLetter.length !== 1) {
-			document.write("Please enter one letter at a time")
-		}	else {
-			// update game with a aLetter
-			for (var wl = 0; wl < randomWord.length; wl++) {
-				if (randomWord[wl] === aLetter) {
-					answerArea[wl] = aLetter;
-					remainingLetters--;
-				}
-			}
-		}				
-		
-		
-		randomWord() {
-			if (remainingLetters === 0)	{
-			document.write("Sorry.. Superman is in real trouble now. Try Again?");
-		}
-		}	
+	  <div class="imageContainer">
+      <img src="images/lego-superman-legs.jpg" id="legs">
+      <img src="images/lego-superman-body.jpg" id="body">
+      <img src="images/lego-superman-no-hands.jpg" id="arms">
+      <img src="images/lego-superman-right-hand-missing.jpg" id="oneHand">
+      <img src="images/lego-superman-no-head.jpg" id="bothHands">
+      <img src="images/lego-superman-no-cape.jpg" id="withHead">
+      <img src="images/lego-superman.jpg" id="withCape">
+      <img src="images/lego-superman-kryptonite.jpg" id="lostKry">
+      <img src="images/lego-superman-flying.jpg" id="wonEar">
+    </div>
+    <div id="usedLetters">Used Letters: </div>
+    <div id="gL">Guesses Left: </div>
+    <div id="blanks">_ _ _ _ _ _ _ _</div>
+    <span id="wrongGuesses"></span>
+    <span id="guessesLeft">8</span>>
+    
 
-		randomWord() {
-			if (correctAnswer) {
-			document.write("Good Job! The answer was " + randomWord);
-	}			
-	} */	
-	
-</script>
-
+  </div>
+  <script src="logic.js"></script>
 </body>
 </html>
