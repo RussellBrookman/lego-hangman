@@ -76,60 +76,52 @@ h1 {
 	font-size: 1.5em;
 }
 
-#letterEntry {
-	margin: 0 0 0 48%;
+#currentImg {
+  height: 76%;
+  padding: 3% 0 0 17%;
 }
 
 #legs {
 	height: 35%;
 	padding: 17% 0 0 43%;
-	display: none;
 }
 
 #body {
 	height: 63%;
 	padding: 15% 0 0 43%;
-	display: none;
 }
 
 #arms {
 	height: 63%;
 	padding: 15% 0 0 37.5%;
-	display: none;
 }
 
 #oneHand {
 	height: 63%;
 	padding: 15% 0 0 37.5%;
-	display: none;
 }
 
 #bothHands {
 	height: 63%;
 	padding: 15% 0 0 37.5%;
-	display: none;
 }
 
 #withHead {
 	height: 96.5%;
 	padding: 0.5% 0 0 32%;
-	display: none;
 }
 
 #withCape {
 	height: 96.5%;
 	padding: 0.5% 0 0 32%;
-	display: none;
 }
 
 #lostKry {
 	height: 98%;
 	margin: 0.5% 0 0 36.5%;
-	display: none;
 }
 
 #wonEar {
 	height: 98%;
 	margin: 0.5% 0 0 32%;
-	display: none;
 }
